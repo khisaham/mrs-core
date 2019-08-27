@@ -6,7 +6,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.openmrs</groupId>
+	<groupId>org.mrs</groupId>
 	<artifactId>mrs</artifactId>
 	<version>2.3.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
@@ -52,37 +52,37 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<!-- OpenMRS Dependencies -->
+			<!-- MRS Dependencies -->
 			<dependency>
-				<groupId>org.openmrs.tools</groupId>
-				<artifactId>openmrs-tools</artifactId>
+				<groupId>org.mrs.tools</groupId>
+				<artifactId>mrs-tools</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.openmrs.test</groupId>
-				<artifactId>openmrs-test</artifactId>
+				<groupId>org.mrs.test</groupId>
+				<artifactId>mrs-test</artifactId>
 				<version>${project.version}</version>
 				<type>pom</type>
 			</dependency>
 			<dependency>
-				<groupId>org.openmrs.api</groupId>
-				<artifactId>openmrs-api</artifactId>
+				<groupId>org.mrs.api</groupId>
+				<artifactId>mrs-api</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.openmrs.api</groupId>
-				<artifactId>openmrs-api</artifactId>
+				<groupId>org.mrs.api</groupId>
+				<artifactId>mrs-api</artifactId>
 				<version>${project.version}</version>
 				<type>test-jar</type>
 			</dependency>
 			<dependency>
-				<groupId>org.openmrs.web</groupId>
-				<artifactId>openmrs-web</artifactId>
+				<groupId>org.mrs.web</groupId>
+				<artifactId>mrs-web</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.openmrs.web</groupId>
-				<artifactId>openmrs-webapp</artifactId>
+				<groupId>org.mrs.web</groupId>
+				<artifactId>mrs-webapp</artifactId>
 				<version>${project.version}</version>
 				<type>war</type>
 			</dependency>
@@ -560,8 +560,8 @@
 						<archive>
 							<manifestEntries>
 								<Build-Timestamp>${TIMESTAMP}</Build-Timestamp>
-								<Specification-Version>${openmrs.version.shortnumericonly}</Specification-Version>
-								<Specification-Vendor>${openmrs.version.long}</Specification-Vendor>
+								<Specification-Version>${mrs.version.shortnumericonly}</Specification-Version>
+								<Specification-Vendor>${mrs.version.long}</Specification-Vendor>
 							</manifestEntries>
 						</archive>
 					</configuration>
@@ -607,13 +607,13 @@
 						<compilerSource>${javaCompilerVersion}</compilerSource>
 						<compilerCompliance>${javaCompilerVersion}</compilerCompliance>
 						<compilerTargetPlatform>${javaCompilerVersion}</compilerTargetPlatform>
-						<configFile>eclipse/OpenMRSFormatter.xml</configFile>
+						<configFile>eclipse/MRSFormatter.xml</configFile>
 						<overrideConfigCompilerVersion>true</overrideConfigCompilerVersion>
 					</configuration>
 					<dependencies>
 						<dependency>
-							<groupId>org.openmrs.tools</groupId>
-							<artifactId>openmrs-tools</artifactId>
+							<groupId>org.mrs.tools</groupId>
+							<artifactId>mrs-tools</artifactId>
 							<version>${project.version}</version>
 						</dependency>
 					</dependencies>
@@ -667,7 +667,7 @@
 						<taglet>org.mrs.tools.doclet.ShouldTaglet</taglet>
 						<tagletArtifact>
 							<groupId>org.mrs.tools</groupId>
-							<artifactId>openmrs-tools</artifactId>
+							<artifactId>mrs-tools</artifactId>
 							<version>${project.version}</version>
 						</tagletArtifact>
 						<!-- For some reason some packages from org.springframework are being
@@ -766,7 +766,7 @@
 					<version>0.8.0</version>
 					<configuration>
 						<includes>
-							<include>org/openmrs/**</include>
+							<include>org/mrs/**</include>
 						</includes>
 					</configuration>
 					<executions>
@@ -788,7 +788,7 @@
 					<artifactId>license-maven-plugin</artifactId>
 					<version>3.0</version>
 					<configuration>
-						<header>/org/openmrs/license/license-header.txt</header>
+						<header>/org/mrs/license/license-header.txt</header>
 						<includes>
 							<include>**/*.java</include>
 							<include>**/*.txt</include>
@@ -995,8 +995,8 @@
 				<configuration>
 					<docfilessubdirs>true</docfilessubdirs>
 					<bottom>&lt;em&gt;&lt;small&gt; Generated ${TIMESTAMP} NOTE - these libraries are in active development and subject to change&lt;/small&gt;&lt;/em&gt;</bottom>
-					<header>&lt;a href="http://www.openmrs.org" target=_top&gt;&lt;img src="resources/openmrs-logo-small.gif" border=0/&gt;&lt;/a&gt;</header>
-					<footer>&lt;a href="http://www.openmrs.org" target=_top&gt;${project.name}&lt;/a&gt;</footer>
+					<header>&lt;a href="http://www.mrs.org" target=_top&gt;&lt;img src="resources/mrs-logo-small.gif" border=0/&gt;&lt;/a&gt;</header>
+					<footer>&lt;a href="http://www.mrs.org" target=_top&gt;${project.name}&lt;/a&gt;</footer>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -1009,17 +1009,17 @@
 
 	<repositories>
 		<repository>
-			<id>openmrs-repo</id>
-			<name>OpenMRS Nexus Repository</name>
-			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/public</url>
+			<id>mrs-repo</id>
+			<name>MRS Nexus Repository</name>
+			<url>http://mavenrepo.mrs.org/nexus/content/repositories/public</url>
 		</repository>
 	</repositories>
 
 	<pluginRepositories>
 		<pluginRepository>
-			<id>openmrs-repo</id>
-			<name>OpenMRS Nexus Repository</name>
-			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/public</url>
+			<id>mrs-repo</id>
+			<name>MRS Nexus Repository</name>
+			<url>http://mavenrepo.mrs.org/nexus/content/repositories/public</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
@@ -1028,14 +1028,14 @@
 
 	<distributionManagement>
 		<repository>
-			<id>openmrs-repo-releases</id>
-			<name>OpenMRS Nexus Releases</name>
-			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/releases</url>
+			<id>mrs-repo-releases</id>
+			<name>MRS Nexus Releases</name>
+			<url>http://mavenrepo.mrs.org/nexus/content/repositories/releases</url>
 		</repository>
 		<snapshotRepository>
-			<id>openmrs-repo-snapshots</id>
-			<name>OpenMRS Nexus Snapshots</name>
-			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/snapshots</url>
+			<id>mrs-repo-snapshots</id>
+			<name>MRS Nexus Snapshots</name>
+			<url>http://mavenrepo.mrs.org/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 
@@ -1045,13 +1045,13 @@
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
 		<TIMESTAMP>${maven.build.timestamp}</TIMESTAMP>
 
-		<openmrs.version>${project.version}</openmrs.version>
+		<mrs.version>${project.version}</mrs.version>
 
 		<springVersion>4.1.4.RELEASE</springVersion>
 		<hibernateVersion>4.3.9.Final</hibernateVersion>
 		<customArgLineForTesting/>
 
-		<sonar.host.url>https://sonar.openmrs.org</sonar.host.url>
+		<sonar.host.url>https://sonar.mrs.org</sonar.host.url>
 		<sonar.issuesReport.html.enable>true</sonar.issuesReport.html.enable>
 		<sonar.issuesReport.lightModeOnly>true</sonar.issuesReport.lightModeOnly>
 		<sonar.issuesReport.console.enable>true</sonar.issuesReport.console.enable>
